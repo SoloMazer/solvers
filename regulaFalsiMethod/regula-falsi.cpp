@@ -30,11 +30,8 @@ int main() {
       // Computing the regula-falsi points
       double x{a - (f(a) * (a - b)) / (f(a) - f(b))};
 
-      if (f(x) == 0) { // solution found
-        std::cout << "Solution is: ( " << x << ", " << f(x) << ")\n";
-        return 0;
-      } else if (fabs(f(x)) < tol) { // tolerance reached
-        std::cout << "\n Approx solution is: ( " << x << ", " << f(x) << ")\n";
+      if (f(x) == 0 || fabs(f(x)) < tol) {
+        std::cout << "Solution found at ( " << x << ", " << f(x) << ")\n";
         return 0;
       }
       // Defining the newer intervals
@@ -46,7 +43,7 @@ int main() {
 
       // Printing some useful info
       n++;
-      std::cout << "i: " << n << " | f(x): " << f(x) << "\n";
+      std::cout << "| i: " << n << " | x: " << x << " | f(x): " << f(x) << "\n";
     }
   }
   return 0;
