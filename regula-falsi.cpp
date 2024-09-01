@@ -1,3 +1,10 @@
+// Created by SoloMazer
+// Regula_falsi Method Implementation
+//
+// Refer:
+// https://en.wikipedia.org/wiki/Regula_falsi
+// https://github.com/SoloMazer/solvers
+
 #include <cmath>
 #include <iostream>
 

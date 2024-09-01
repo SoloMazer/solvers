@@ -1,3 +1,10 @@
+// Created by SoloMazer
+// Bisection Method Implementation
+//
+// Refer:
+// https://en.wikipedia.org/wiki/Bisection_method
+// https://github.com/SoloMazer/solvers
+
 #include <cmath>
 #include <iostream>
 

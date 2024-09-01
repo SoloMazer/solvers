@@ -1,3 +1,10 @@
+// Created by SoloMazer
+// Secant Method Implementation
+//
+// Refer:
+// https://en.wikipedia.org/wiki/Secant_method
+// https://github.com/SoloMazer/solvers
+
 #include <cmath>
 #include <iostream>
 
@@ -19,6 +26,10 @@ int main() {
 
     // define the newton
     x = x - ((f(x) * (x_0 - x_1)) / (f(x_0) - f(x_1)));
+
+    // Update the values for the next iteration
+    x_0 = x_1;
+    x_1 = x;
 
     n++;
     // Printing useful data

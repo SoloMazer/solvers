@@ -1,10 +1,16 @@
+// Created by SoloMazer
+// Newton-Raphson Method Implementation
+//
+// Refer:
+// https://en.wikipedia.org/wiki/Newton%27s_method
+// https://github.com/SoloMazer/solvers
+
 #include <cmath>
-#include <cstdlib>
 #include <iostream>
 
-double f(double x) { return std::sin(x) + x * x - 1; }
+double f(double x) { return x * x * x - x - 3; }
 
-double f_prime(double x) { return std::cos(x) + 2 * x; }
+double f_prime(double x) { return 3 * x * x - 1; }
 
 int main() {
 
@@ -12,10 +18,11 @@ int main() {
   double a{}, x{};
   std::cout << "Enter initial point for newton-raphson: ";
   std::cin >> a;
+  x = a;
 
   // using machine epsilon as tolerance
   double tol{std::numeric_limits<double>::epsilon()};
-  uint n{0}; // iterating variable
+  uint n{1}; // iterating variable
 
   if (f_prime(a) == 0) {
     std::cout
@@ -24,12 +31,13 @@ int main() {
   } else {
     while (fabs(f(x)) > tol) {
 
-      // define the newton
-      x{x - (f(x) / f_prime(x))};
-
-      n++;
       // Printing useful data
       std::cout << "| i: " << n << " | x: " << x << " | f(x): " << f(x) << "\n";
+
+      // define the newton
+      x = x - (f(x) / f_prime(x));
+
+      n++;
     }
 
     std::cout << "Solution found at ( " << x << ", " << f(x) << ")\n";
