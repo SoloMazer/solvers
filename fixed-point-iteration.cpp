@@ -21,8 +21,8 @@ int main() {
   std::cin >> x_0;
 
   // using machine epsilon as tolerance
-  // double tol{std::numeric_limits<double>::epsilon()};
-  double tol{10e-16};
+  double tol{std::numeric_limits<double>::epsilon()};
+  // double tol{10e-16};
 
   uint n{1};
   double x_1{g(x_0)};
